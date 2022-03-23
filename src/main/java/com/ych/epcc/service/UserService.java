@@ -17,8 +17,8 @@ public class UserService {
 
     @Autowired
     UserMapper userMapper;
-    public User selPeopleByCardNuM(String bankCardNumber){
-        return userMapper.selPeopleByCardNuM(bankCardNumber);
+    public User sel(String bankCardNumber){
+        return userMapper.sel(bankCardNumber);
 
     }
 

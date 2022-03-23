@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com..ych.epcc.mapper.UserMapper">
+<mapper namespace="com.ych.epcc.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.ych.epcc.entity.User">
         <result column="bankCardNumber" jdbcType="VARCHAR" property="bankCardNumber"/>
         <result column="humanName" jdbcType="VARCHAR" property="humanName"/>
@@ -9,8 +9,8 @@
         <result column="newDate" jdbcType="VARCHAR" property="newDate"/>
     </resultMap>
     
-    <select id="selPeopleByCardNuM" resultType="com.ych.epcc.entity.User">
-        select * from people where BankCardNumber =#{BankCardNumber}
+    <select id="sel" resultType="com.ych.epcc.entity.User">
+        select * from people where BankCardNumber =#{BankCardNumber} limit 1
     </select>
 
     <insert id="insertPeople" parameterType="com.ych.epcc.entity.User">

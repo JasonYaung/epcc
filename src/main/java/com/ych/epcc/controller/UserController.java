@@ -22,6 +22,6 @@ public class UserController {
 
     @RequestMapping("getUser/{bankCardNumber}")
     public String  GetUser(@PathVariable String bankCardNumber){
-        return userService.selPeopleByCardNuM(bankCardNumber).toString();
+        return userService.sel(bankCardNumber).toString();
     }
 }

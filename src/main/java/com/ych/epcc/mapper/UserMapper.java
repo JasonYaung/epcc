@@ -1,6 +1,7 @@
 package com.ych.epcc.mapper;
 
 import com.ych.epcc.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,10 +10,16 @@ import org.springframework.stereotype.Repository;
  * @author: yangchenhui
  * @create: 2022-03-23 15:37
  **/
-
+@Mapper
 @Repository
 public interface UserMapper {
-    User selPeopleByCardNuM(String bankCardNumber);
+    /**
+     *
+     * @param bankCardNumber
+     * @return asdasd
+     *
+     */
+    User sel(String bankCardNumber);
     User insert(String bankCardNumber,String phoneNumber,String humanName,String newDate);
 
 }
