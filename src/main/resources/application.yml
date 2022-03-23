@@ -1,4 +1,0 @@
-#masterProperties
-spring:
-  profiles:
-    active: dev

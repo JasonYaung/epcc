@@ -9,40 +9,49 @@ package com.ych.epcc.entity;
 public class User {
 
 
-    private String BankCardNumer;
-    private String PhoneNumber;
-    private String HumanName;
-    private String NewDate;
+    private String bankCardNumber;
+    private String phoneNumber;
+    private String humanName;
+    private String newDate;
 
-    public String getBankCardNumer() {
-        return BankCardNumer;
+
+    public String getBankCardNumber() {
+        return bankCardNumber;
     }
 
-    public void setBankCardNumer(String bankCardNumer) {
-        BankCardNumer = bankCardNumer;
+    public void setBankCardNumber(String bankCardNumber) {
+        this.bankCardNumber = bankCardNumber;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getHumanName() {
-        return HumanName;
+        return humanName;
     }
 
     public void setHumanName(String humanName) {
-        HumanName = humanName;
+        this.humanName = humanName;
     }
 
     public String getNewDate() {
-        return NewDate;
+        return newDate;
     }
 
     public void setNewDate(String newDate) {
-        NewDate = newDate;
+        this.newDate = newDate;
+    }
+    @Override
+    public String toString(){
+        return "people{" +
+                "Card:"+bankCardNumber+
+                ",phone:"+phoneNumber+
+                ",name:"+humanName+
+                ",datetime"+newDate+"}";
     }
 }
