@@ -13,6 +13,12 @@
         select * from people where BankCardNumber =#{BankCardNumber} limit 1
     </select>
 
+    <select id="getAll" parameterType="com.ych.epcc.entity.User" resultMap="BaseResultMap" >
+        select * from people
+
+    </select>
+
+
     <insert id="insertPeople" parameterType="com.ych.epcc.entity.User">
         insert into people
             (bankCardNumber,humanName,phoneNumber,newDate)
