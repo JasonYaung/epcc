@@ -9,8 +9,9 @@ spring:
 
 
   thymeleaf:
-    prefix: /templates/
-    cache: true
+    prefix:
+      classpath: /templates
+      cache: true
   logging:
     level:
       root=debug:
