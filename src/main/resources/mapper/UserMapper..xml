@@ -9,7 +9,7 @@
         <result column="newDate" jdbcType="VARCHAR" property="newDate"/>
     </resultMap>
     
-    <select id="sel" resultType="com.ych.epcc.entity.User">
+    <select id="sel" resultType="com.ych.epcc.entity.User" resultMap="BaseResultMap">
         select * from people where BankCardNumber =#{BankCardNumber} limit 1
     </select>
 
@@ -18,8 +18,7 @@
 
     </select>
 
-
-    <insert id="insertPeople" parameterType="com.ych.epcc.entity.User">
+    <insert id="insertPeople" parameterType="com.ych.epcc.entity.User" >
         insert into people
             (bankCardNumber,humanName,phoneNumber,newDate)
             values

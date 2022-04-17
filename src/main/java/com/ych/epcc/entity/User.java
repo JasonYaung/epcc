@@ -1,6 +1,8 @@
 package com.ych.epcc.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 /**
  * @program: epcc
@@ -10,9 +12,10 @@ import lombok.Data;
  **/
 
 @Data
+@AllArgsConstructor
 public class User {
 
-
+    @Id
     private String bankCardNumber;
 
     private String phoneNumber;
@@ -23,12 +26,5 @@ public class User {
 
 
 
-    @Override
-    public String toString(){
-        return "people{" +
-                "Card:"+bankCardNumber+
-                ",phone:"+phoneNumber+
-                ",name:"+humanName+
-                ",datetime"+newDate+"}";
-    }
+
 }

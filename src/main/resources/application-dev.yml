@@ -3,15 +3,27 @@
 #DBProperties
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ychdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/ychdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&&allowPublicKeyRetrieval=true
     username: root
-    password: root
+    password: 123456
+
 
 
   thymeleaf:
     prefix:
       classpath: /templates
-      cache: true
+      cache: false
+      suffix: .html
+      encoding: UTF-8
+
+  mvc:
+    static-path-pattern: /static/**
+    resources:
+      chain:
+        strategy:
+          content:
+            enable: true
+            path: /**
   logging:
     level:
       root=debug:

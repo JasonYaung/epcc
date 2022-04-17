@@ -3,10 +3,7 @@ package com.ych.epcc.controller;
 import com.ych.epcc.entity.User;
 import com.ych.epcc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +15,6 @@ import java.util.List;
  **/
 
 @RestController
-@RequestMapping("test")
 public class UserController {
 
 
@@ -26,28 +22,35 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("getUser/{bankCardNumber}")
-    public String getUser(@PathVariable String bankCardNumber){
-        return userService.sel(bankCardNumber).toString();
-    }
+//    @RequestMapping("getUser/{bankCardNumber}")
+//    public String getUser(@PathVariable String bankCardNumber){
+//        return userService.sel(bankCardNumber).toString();
+//    }
 
-    @RequestMapping("getUser/{key}/{bankCardNumber}")
-    public String getUser(@PathVariable String key, @PathVariable String bankCardNumber){
-        return userService.sel(key,bankCardNumber);
-    }
+
 
     @RequestMapping(value = "getAll",method = RequestMethod.GET)
     public List<User> getAll(){
         return userService.getAll();
     }
 
-    @RequestMapping("getRedis/{key}")
+    @RequestMapping("getRedis")
     public String getRedis(@PathVariable String key){
         return userService.getRedis(key);
     }
 
-    @RequestMapping("setRedis/{key}/{value}")
-    public String setRedis(@PathVariable String key, @PathVariable String value){
-        return userService.setRedis(key,value);
+
+
+
+    /**
+     * 更新数据库
+     * @return boolean
+     */
+    @RequestMapping(value = "setPeople",method = RequestMethod.POST)
+    public boolean setPeople(@RequestBody User user){
+
+        return userService.insert(user.getBankCardNumber(),user.getPhoneNumber(),user.getHumanName(),user.getNewDate());
+
     }
+
 }

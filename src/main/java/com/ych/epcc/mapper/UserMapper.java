@@ -38,9 +38,8 @@ public interface UserMapper {
      * @param phoneNumber
      * @param humanName
      * @param newDate
-     * @return
      */
-    User insert(String bankCardNumber,String phoneNumber,String humanName,String newDate);
+    void insertPeople(String bankCardNumber, String phoneNumber, String humanName, String newDate);
 
 }
 

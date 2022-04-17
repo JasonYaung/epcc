@@ -2,23 +2,53 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>人物表查询</title>
+    <title>人物</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <!--spring—boot-->
-<script src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/static/request.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/static/post.js" charset="UTF-8"></script>
 <body>
-<div>人物查询</div>
-<form method="post" onsubmit="return false" action="##" id="show">
-    <input type="text" name="bankCardNumber" th:value="${User!=null}">
+    <div id = "setPeople" align="center"></div>
+    <div class="container">
+        <h2>人物</h2>
+        <form id="people">
+            <div class="form-group">
+                <label for="bankCardNumber">银行卡账号:</label>
+                <input type="text" class="form-control" id="bankCardNumber" placeholder="请输入银行卡号！" name="bankCardNumber">
 
-</form>
-<script>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">手机号:</label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="请输入手机号！" name="phoneNumber">
 
-    }
-</script>
-<button type="button" name="查询全部" onclick="" >查询全部</button>
+            </div>
+            <div class="form-group">
+                <label for="humanName">姓名:</label>
+                <input type="text" class="form-control" id="humanName" placeholder="请输入姓名！" name="humanName">
 
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="记住">记住数据
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">写入</button>
+        </form>
+        <div class="col-sm-7" style="margin: 20px 0px 20px 0px">
+            <button id="getAllPeople" class="btn btn-primary" type="button">获取所有人的信息</button>
+            <div id="getPeople" style="padding: 20px 10px 20px 50px">
+
+        </div>
+        </div>
+    </div>
 </body>
 </html>
