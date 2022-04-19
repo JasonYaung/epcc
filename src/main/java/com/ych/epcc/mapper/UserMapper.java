@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @program: epcc
@@ -22,7 +23,7 @@ public interface UserMapper {
      * @param bankCardNumber
      * @return
      */
-    User sel(String bankCardNumber);
+    User getUser(String bankCardNumber);
 
     /**
      * 查询全部

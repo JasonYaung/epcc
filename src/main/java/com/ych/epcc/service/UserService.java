@@ -13,6 +13,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.logging.LogManager;
 
 /**
@@ -34,19 +35,34 @@ public class UserService {
     private RedisUtil redisUtil;
     private final Logger logger = LoggerFactory.getLogger(UserService.class);
 
+    /**
+     * @param: bankCardNumber
+     * @return:
+     */
+    public User getUser(String bankCardNumber)  {
+
+        return userMapper.getUser(bankCardNumber);
+
+    }
 
 
-
+    /**
+     *
+     * @param: bankCardNumber
+     * @param: phoneNumber
+     * @param: humanName
+     * @param: newDate
+     */
 
     public boolean insert(String bankCardNumber,String phoneNumber,String humanName,String newDate){
        try {
            userMapper.insertPeople(bankCardNumber,phoneNumber,humanName,newDate);
+           logger.info("写入成功！");
            return true;
        }catch (Exception e){
-           logger.debug(""+e);
-
+           logger.debug("数据库写入失败!"+e);
+           throw e;
        }
-        return false;
 
 
     }
@@ -65,4 +81,6 @@ public class UserService {
 
         return key;
     }
+
+
 }

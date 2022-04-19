@@ -16,6 +16,7 @@
 <!--spring—boot-->
 <script type="text/javascript" src="/static/request.js" charset="UTF-8"></script>
 <script type="text/javascript" src="/static/post.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../static/getUser.js" charset="UTF-8"></script>
 <body>
     <div id = "setPeople" align="center"></div>
     <div class="container">
@@ -25,6 +26,11 @@
                 <label for="bankCardNumber">银行卡账号:</label>
                 <input type="text" class="form-control" id="bankCardNumber" placeholder="请输入银行卡号！" name="bankCardNumber">
 
+
+
+            </div>
+            <div class="form-group">
+                <button id="getUser" class="btn btn-primary" type="button">查询</button>
             </div>
             <div class="form-group">
                 <label for="phoneNumber">手机号:</label>
@@ -42,6 +48,8 @@
                 </label>
             </div>
             <button type="submit" class="btn btn-primary">写入</button>
+            <br>
+
         </form>
         <div class="col-sm-7" style="margin: 20px 0px 20px 0px">
             <button id="getAllPeople" class="btn btn-primary" type="button">获取所有人的信息</button>

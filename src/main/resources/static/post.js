@@ -21,18 +21,13 @@ $(document).ready(
                 data: JSON.stringify(people),
                 dataType: 'json',
                 success: function (result) {
-                    if (result=="true") {
-                        $("#postResultDiv").html(
-                            "" + result.data.bankCardNumber
-                            + "Post Successfully! <br>"
-                            + "---> Congrats !!" + "</p>");
-                    } else {
-                        $("#postResultDiv").html("<strong>Error</strong>");
+                    if (result==="true") {
+                        alert("写入成功！")
                     }
                     console.log(result);
                 },
                 error: function (e) {
-                    alert("Error!")
+                    alert("写入失败!")
                     console.log("ERROR: ", e);
                 }
 

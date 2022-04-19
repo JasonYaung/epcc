@@ -10,7 +10,7 @@ GET: $(document).ready(
                 type:"GET",
                 url:"getAll",
                 success:function (result){
-                    if (result.length != 0){
+                    if (result.length !== 0){
 
                             var str = "";
                             for (var i = 0; i < result.length;i++){

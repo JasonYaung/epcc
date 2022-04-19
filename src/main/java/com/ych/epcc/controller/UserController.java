@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @program: epcc
@@ -22,10 +23,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @RequestMapping("getUser/{bankCardNumber}")
-//    public String getUser(@PathVariable String bankCardNumber){
-//        return userService.sel(bankCardNumber).toString();
-//    }
+    @RequestMapping(value = "getUser",method = RequestMethod.GET)
+    public User getUser(@RequestParam("bankCardNumber") String bankCardNumber)  {
+        return userService.getUser(bankCardNumber);
+    }
 
 
 
